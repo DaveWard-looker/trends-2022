@@ -56,8 +56,8 @@
       Term: top_terms.term
       Rank: top_terms.rank
     row: 0
-    col: 0
-    width: 24
+    col: 5
+    width: 15
     height: 10
   - title: Trend Per State
     name: Trend Per State
@@ -122,6 +122,28 @@
     col: 0
     width: 24
     height: 13
+  - title: Untitled
+    name: Untitled
+    model: google_trends
+    explore: top_terms
+    type: single_value
+    fields: [top_terms.count]
+    limit: 500
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    single_value_title: Count of searchs
+    defaults_version: 1
+    row: 0
+    col: 0
+    width: 5
+    height: 10
   filters:
   - name: Week
     title: Week
