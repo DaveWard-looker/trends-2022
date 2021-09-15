@@ -3,6 +3,7 @@ connection: "bigquery_personal_instance"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/google_trend_db.dashboard"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
