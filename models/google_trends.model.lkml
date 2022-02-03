@@ -26,4 +26,18 @@ persist_with: google_trends_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: top_terms {}
+explore: top_terms {
+hidden: yes
+}
+
+explore: dt_terms {}
+
+
+explore: search_terms {
+  extends: [top_terms]
+  view_name: top_terms
+  access_filter: {
+    user_attribute: state
+    field: state
+  }
+}

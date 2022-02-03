@@ -73,6 +73,27 @@ view: top_terms {
     sql: ${TABLE}.week ;;
   }
 
+
+  dimension_group: period_a {
+    type: time
+    timeframes: [
+      raw,
+      date
+    ]
+    datatype: date
+    sql: ${TABLE}.week ;;
+  }
+
+  dimension_group: period_b {
+    type: time
+    timeframes: [
+      raw,
+      date
+    ]
+    datatype: date
+    sql: ${TABLE}.week ;;
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
@@ -101,6 +122,13 @@ view: top_terms {
     type: sum
     # hidden: yes
     sql: ${score} ;;
+  }
+
+  measure: score_percentile {
+    percentile: 1
+    type: percentile
+    sql: ${score} ;;
+
   }
 
   measure: average_score {
